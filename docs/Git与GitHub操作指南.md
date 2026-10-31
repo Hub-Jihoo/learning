@@ -436,6 +436,67 @@ git switch main
 git switch -c rescue-branch
 ```
 
+### 12.8 批量改写历史中的作者信息（本次实际做过）
+
+如果旧提交里包含真实姓名、私人邮箱，而仓库已经公开，可以用 `filter-branch` 重写历史。
+
+**第一步：备份整个仓库**（包含所有分支和历史，务必先做）：
+
+```bash
+git bundle create ../learning-backup.bundle --all
+```
+
+**第二步：把远程分支拉到本地**，确保它也会被改写：
+
+```bash
+git branch dev origin/dev
+```
+
+**第三步：重写所有分支的作者与提交者**：
+
+```bash
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --env-filter '
+export GIT_AUTHOR_NAME="你的匿名用户名"
+export GIT_AUTHOR_EMAIL="你的匿名邮箱"
+export GIT_COMMITTER_NAME="你的匿名用户名"
+export GIT_COMMITTER_EMAIL="你的匿名邮箱"
+' --tag-name-filter cat -- --branches --tags
+```
+
+**第四步：验证**：
+
+```bash
+# 作者应只剩匿名身份
+git log main dev --format='%an <%ae>' | sort -u
+
+# 内容不应改变：新旧提交的 tree 哈希应完全一致
+git rev-parse 旧提交^{tree}
+git rev-parse main^{tree}
+```
+
+**第五步：强制推送**：
+
+```bash
+git push --force origin main dev
+```
+
+**第六步：清理本地旧对象**（可选，确认推送成功后再做）：
+
+```bash
+git update-ref -d refs/original/refs/heads/main
+git update-ref -d refs/original/refs/heads/dev
+git reflog expire --expire=now --all
+git gc --prune=now
+```
+
+注意事项：
+
+- 所有提交哈希都会变化，协作者必须重新克隆或用 `git reset --hard origin/main` 同步；
+- GitHub 上旧提交可能在一段时间内仍可通过旧 SHA 访问，但常规页面不再显示旧作者；
+- 已被 fork 的仓库不受影响；
+- 更现代的工具是 [git-filter-repo](https://github.com/newren/git-filter-repo)，但需要额外安装；
+- **备份文件本身仍含旧信息**，确认无误后应妥善保管或删除，不要上传。
+
 ## 13. 进阶路线
 
 学完基础工作流后，可以按这个顺序继续：

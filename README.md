@@ -101,7 +101,7 @@ python python-basics/实验1.py
 
 | 日期 | 变更 |
 | --- | --- |
-| 2026-10-31 | 重写 README；新增 `python-basics/`、`docs/`；补充 `.gitignore`；添加 Git 与 README 写作指南 |
+| 2026-10-31 | 重写 README；新增 `python-basics/`、`docs/`；补充 `.gitignore`；添加 Git 与 README 写作指南；将历史提交作者统一匿名化 |
 
 ## 🤝 贡献与反馈
 
