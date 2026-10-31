@@ -27,8 +27,9 @@ learning/
 ├── .gitignore                # Git 忽略规则（IDE 配置、缓存、临时文件等）
 ├── test.py                   # 早期练习脚本
 ├── docs/
-│   ├── Git与GitHub操作指南.md  # 从克隆到合并的完整流程 + 命令速查
-│   └── README写作指南.md       # README 结构、Markdown 语法与自查清单
+│   ├── Git与GitHub操作指南.md    # 从克隆到合并的完整流程 + 命令速查
+│   ├── README写作指南.md         # README 结构、Markdown 语法与自查清单
+│   └── GitHub常用术语中英对照.md  # 界面按钮、命令、报错的中英对照
 └── python-basics/
     ├── README.md             # 本目录的说明与运行方式
     ├── 实验1.py               # 实验一：输入与 f-string 格式化输出
@@ -47,6 +48,7 @@ learning/
 | 变量练习 | [`python-basics/practice/a=100.txt`](python-basics/practice/a=100.txt) | 赋值与 `print` 的最简示例 |
 | Git / GitHub 指南 | [`docs/Git与GitHub操作指南.md`](docs/Git与GitHub操作指南.md) | 克隆 → 分支 → 提交 → 推送 → 合并 |
 | README 写作指南 | [`docs/README写作指南.md`](docs/README写作指南.md) | 结构模板、Markdown 语法、自查清单 |
+| GitHub 术语对照 | [`docs/GitHub常用术语中英对照.md`](docs/GitHub常用术语中英对照.md) | 界面、命令、常见报错的中英文对照 |
 | 早期练习 | [`test.py`](test.py) | 列表遍历与赋值 |
 
 ## 🚀 快速开始
@@ -73,8 +75,9 @@ python python-basics/实验1.py
 建议按以下顺序阅读：
 
 1. [`docs/Git与GitHub操作指南.md`](docs/Git与GitHub操作指南.md) —— 先跑通 Git 的基本工作流；
-2. [`docs/README写作指南.md`](docs/README写作指南.md) —— 再学会把项目"讲清楚"；
-3. [`python-basics/notes/Python-增删查改速查.md`](python-basics/notes/Python-增删查改速查.md) —— 随时查阅 Python 数据结构用法。
+2. [`docs/GitHub常用术语中英对照.md`](docs/GitHub常用术语中英对照.md) —— 对照着英文界面操作，不怕看不懂按钮；
+3. [`docs/README写作指南.md`](docs/README写作指南.md) —— 再学会把项目"讲清楚"；
+4. [`python-basics/notes/Python-增删查改速查.md`](python-basics/notes/Python-增删查改速查.md) —— 随时查阅 Python 数据结构用法。
 
 ## 🧭 学习进度
 
@@ -101,7 +104,7 @@ python python-basics/实验1.py
 
 | 日期 | 变更 |
 | --- | --- |
-| 2026-10-31 | 重写 README；新增 `python-basics/`、`docs/`；补充 `.gitignore`；添加 Git 与 README 写作指南；将历史提交作者统一匿名化 |
+| 2026-10-31 | 重写 README；新增 `python-basics/`、`docs/`；补充 `.gitignore`；添加 Git 与 README 写作指南；添加 GitHub 术语中英对照；将历史提交作者统一匿名化 |
 
 ## 🤝 贡献与反馈
 
