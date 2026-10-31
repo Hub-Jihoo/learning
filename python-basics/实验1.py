@@ -1,0 +1,5 @@
+id = input("请输入学号：")
+name = input("请输入姓名：")
+sex = input("请输入性别：")
+native = input("请输入籍贯：")
+print(f"学号：{id}，姓名：{name}，性别：{sex}，籍贯：{native}")
