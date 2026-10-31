@@ -216,3 +216,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ===== 本项目自定义忽略规则 =====
+# JetBrains IDE (PyCharm / IntelliJ IDEA) 的本地配置，不应提交到仓库
+.idea/
+*.iml
+
+# VS Code 本地配置
+.vscode/
+
+# 操作系统生成的杂项文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office 临时锁文件
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
